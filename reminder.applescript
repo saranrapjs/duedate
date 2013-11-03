@@ -28,5 +28,5 @@ on run argv
 			end tell
 		end if
 	end tell
-	return bookResult&" '"&bookName&"'"
+	return bookResult&": "&bookName
 end run

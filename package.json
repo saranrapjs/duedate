@@ -8,7 +8,8 @@
     "spooky": "*",
     "moment": "*",
     "applescript": "*",
-    "optimist": "*"
+    "optimist": "*",
+    "prompt":"*"
   },
   "keywords":["library","brooklyn","apple","reminders"],
   "scripts": {
