@@ -9,9 +9,14 @@
     "moment": "*",
     "applescript": "*",
     "optimist": "*",
-    "prompt":"*"
+    "prompt": "*"
   },
-  "keywords":["library","brooklyn","apple","reminders"],
+  "keywords": [
+    "library",
+    "brooklyn",
+    "apple",
+    "reminders"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +24,10 @@
     "type": "git",
     "url": "http://github.com/saranrapjs/duedate.git"
   },
-  "author": "Jeff Sisson",
+  "author": {
+    "name": "Jeff Sisson",
+    "email": "jeff@bigboy.us",
+    "url": "http://ilikenicethings.com/"
+  },
   "license": "MIT"
 }
