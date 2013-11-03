@@ -1,0 +1,23 @@
+{
+  "name": "duedate",
+  "version": "0.0.1",
+  "description": "convert library book due dates into Reminders.app reminders",
+  "main": "main.js",
+  "bin": "./main.js",
+  "dependencies": {
+    "spooky": "*",
+    "moment": "*",
+    "applescript": "*",
+    "optimist": "*"
+  },
+  "keywords":["library","brooklyn","apple","reminders"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/saranrapjs/duedate.git"
+  },
+  "author": "Jeff Sisson",
+  "license": "MIT"
+}
