@@ -1,6 +1,6 @@
 # duedate
 
-This Node.js script will fetch the books you currently have checked out at the library and convert their due dates into Reminders.app reminders.  
+This Node.js script will fetch the books you currently have checked out at the library and convert their due dates into Reminders.app reminders.  The script will update reminders when due dates have been changed (renewal), and create reminders for new checkouts.
 
 I've tested it with the Brooklyn Public Library (my local library!) but it should work with any library that uses BiblioCommons as their catalog provider (e.g. their URL looks like `http://[library name].bibliocommons.com/`);
 
@@ -53,3 +53,7 @@ $ duedate -u my_username
 Enter your library PIN: ****
 Updated: 'Private Empire' is due
 ```
+
+The result:
+
+![screen shot 2013-11-03 at 11 53 00 am](https://f.cloud.github.com/assets/707098/1461358/6bc2b3ec-44a8-11e3-99cd-227b72d5f44b.png)
