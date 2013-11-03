@@ -18,10 +18,10 @@ You'll also need CasperJS, "an open source navigation scripting & testing utilit
 brew install casperjs
 ```
 
-Then install the npm package:
+Then install the npm package globally (may require sudo):
 
 ```
-npm install duedate
+npm install -g duedate
 ```
 
 ## Usage
