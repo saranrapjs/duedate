@@ -1,6 +1,6 @@
 {
   "name": "duedate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "convert library book due dates into Reminders.app reminders",
   "main": "main.js",
   "bin": "./main.js",
@@ -9,6 +9,7 @@
     "moment": "*",
     "applescript": "*",
     "optimist": "*",
+    "mu2":"*",
     "prompt": "*"
   },
   "keywords": [

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>{{label}}</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>{{path}}</string>
+        <string>-u</string>
+        <string>{{username}}</string>
+        <string>-p</string>
+        <string>{{pin}}</string>
+    </array>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>6</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/sbin:/usr/bin:/bin:/usr/local/bin</string>
+    </dict>
+</dict>
+</plist>

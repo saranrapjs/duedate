@@ -30,10 +30,11 @@ npm install -g duedate
 Usage: duedate [options]
 
 Options:
-  -u, --username  library username or barcode                         [required]
+  -u, --username  library username or barcode                          [required]
   -p, --pin       library pin
-  --library       BiblioCommons key, http://[key].bibliocommons.com/  [default: "brooklyn"]
-  --title         title of the Reminders list                         [default: "Brooklyn Public Library"]
+  --library       BiblioCommons key, http://[key].bibliocommons.com/   [default: "brooklyn"]
+  --title         title of the Reminders list                          [default: "Brooklyn Public Library"]
+  --install       install this script to check due dates once per day  [default: false]
 ```
 
 ##  Brooklyn Public Library examples

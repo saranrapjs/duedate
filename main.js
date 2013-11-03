@@ -23,16 +23,22 @@ var Spooky = require('spooky'),
 		'default':'Brooklyn Public Library',
 		describe:'title of the Reminders list'
 	})
+	.options('install',{
+		'default':false,
+		'boolean':true,
+		describe:'install this script to check due dates once per day'
+	})
     .argv;
 
 var username= argv.username,
 	region = argv.library + ".bibliocommons.com",
 	listName = argv.title,
 	pin;
-
 prompt.override = argv
 prompt.message = ""
 prompt.delimiter = ""
+
+
 prompt.start()
 prompt.get([{
 	name:'pin',
@@ -41,7 +47,30 @@ prompt.get([{
 	required:true	
 }], function(err,result) {
 	pin = result.pin.toString();
-	run_spooky();
+
+	if (argv.install === true) {
+		// install the launchctl plist, then immediately run it 
+		// (this should trigger any necessary Reminders.app permissions prompt)
+		var mu = require('mu2'),
+			fs = require('fs'),
+			exec = require('child_process').exec,
+			reverseDomain = "us.bigboy.duedate",
+			plistPath = process.env.HOME+"/Library/LaunchAgents/"+reverseDomain+".plist",
+			launchctlcommand = 'launchctl unload '+plistPath+' && launchctl load '+plistPath+' && launchctl start '+reverseDomain,
+			plist = fs.createWriteStream(plistPath);
+		mu.root = __dirname
+		mu.compileAndRender('launchctl.xml', {label:reverseDomain,path:__filename,username:username,pin:pin})
+			.on('end', function() {
+				exec(launchctlcommand, function(err,response) {
+
+				})
+			})
+			.pipe(plist)
+	} else {
+		// otherwise run it normally
+		run_spooky();	
+	}
+
 })
 
 function run_spooky() {
@@ -127,7 +156,7 @@ function add_items_to_remindersapp(items) {
 			remind_me_date = due_date.subtract('days', 2), 
 			formatted_title = "'" + item.title + "' is due",
 			dateFormat = "dddd, MMMM D, YYYY [at] h:mm:ss A";
-		applescript.execFile('reminder.applescript', 
+		applescript.execFile( __dirname + '/reminder.applescript', 
 			[
 				formatted_title, 
 				due_date.format(dateFormat),
